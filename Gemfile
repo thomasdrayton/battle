@@ -9,3 +9,4 @@ group :development, :test do
 end
 gem 'sinatra'
 gem 'shotgun'
+gem 'capybara'
