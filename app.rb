@@ -1,8 +1,8 @@
 require 'sinatra/base'
-require 'shotgun'
 
 class Battle < Sinatra::Base
 enable :sessions
+set :session_secret, "Here be Dragons"
 
   get '/' do
     erb(:index)
@@ -19,6 +19,16 @@ enable :sessions
     @player_2_name = session[:player_2_name]
     erb(:play)
   end
+
+  get '/attacked' do
+    @player_1_name = session[:player_1_name]
+    @player_2_name = session[:player_2_name]
+    erb(:attack)
+  end
+
+
+
+
 
   run! if app_file == $0
 end
