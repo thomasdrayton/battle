@@ -13,6 +13,4 @@ DEFAULT_HP = 100
     @hitpoints -= 10
   end
 
-
-
 end
