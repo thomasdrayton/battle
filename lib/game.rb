@@ -5,7 +5,7 @@ class Game
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
     @current_turn = player_1
-    @next_turn = opponent_of(@current_turn)
+    @next_turn = player_2
   end
 
   def attack(player)
