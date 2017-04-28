@@ -8,6 +8,13 @@ class Game
     @next_turn = player_2
   end
 
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+  
+  def self.instance
+    @game
+  end
 
   def attack(player)
     player.receive_damage
@@ -28,8 +35,3 @@ class Game
   end
 
 end
-
-#def switch_turns
-#  @current_turn = player_2 if @current_turn = player_1
-#  @current_turn = player_1 if @current_turn = player_2
-#end

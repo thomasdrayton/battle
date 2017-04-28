@@ -4,7 +4,7 @@
 
 <h2><%= @game.current_turn.name %> took one to the jaw </h2>
 <h2> <%= @game.current_turn.name %>'s HP was slammed by 10!!! </h2>
-<h2><%= @game.current_turn.name %>: <%= @game.current_turn.hitpoints %>HP</h2>
+<h2><%= @game.current_turn.name %>: <%= @game.next_turn.hitpoints %>HP</h2>
 
 
 <% if @game.over? == false %>
