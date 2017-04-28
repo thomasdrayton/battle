@@ -1,6 +1,6 @@
 <h1><%= @game.current_turn.name %> vs. <%= @game.next_turn.name %></h1>
 <h4><%= @game.current_turn.name %>: <%= @game.current_turn.hitpoints %>HP</h4>
 <h4><%= @game.next_turn.name %>: <%= @game.next_turn.hitpoints %>HP</h4>
-<h2><%= @game.current_turn.name %>: time to attack! <%=  @game.next_turn.name %> : <%@game.next_turn.hitpoints %>HP</h2>
+<h2><%= @game.current_turn.name %>: time to attack! <%=  @game.next_turn.name %> has <%=@game.next_turn.hitpoints %>HPs</h2>
 <form action="/attacked">
 <input type="submit" value="Attack!">

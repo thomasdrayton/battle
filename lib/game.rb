@@ -8,6 +8,7 @@ class Game
     @next_turn = player_2
   end
 
+
   def attack(player)
     player.receive_damage
   end
@@ -18,10 +19,12 @@ class Game
   @next_turn = @players[1]
   end
 
-private
-
   def opponent_of(the_player)
     @players.select { |player| player != the_player }.first
+  end
+
+  def over?
+    @players.any? {|player| player.hitpoints <= 0}
   end
 
 end

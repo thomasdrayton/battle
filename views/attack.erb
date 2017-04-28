@@ -1,11 +1,19 @@
-<h1><%= @game.current_turn.name %> attacked <%= @game.next_turn.name %></h2>
+<h1><%= @game.next_turn.name %> attacked <%= @game.current_turn.name %></h2>
 
   <img style="border: 5px groove red;" src="https://previews.123rf.com/images/ratoca/ratoca1209/ratoca120900350/15600450-Punch-cartoon-Stock-Vector-boxing-cartoon-beaten.jpg" height="120" width="120"></img>
 
-<h2><%= @game.next_turn.name %> took one to the jaw </h2>
-<h2> <%= @game.next_turn.name %>'s HP was slammed by 10!!! </h2>
-<h2><%= @game.next_turn.name %>: <%= @game.next_turn.hitpoints %>HP</h2>
+<h2><%= @game.current_turn.name %> took one to the jaw </h2>
+<h2> <%= @game.current_turn.name %>'s HP was slammed by 10!!! </h2>
+<h2><%= @game.current_turn.name %>: <%= @game.current_turn.hitpoints %>HP</h2>
 
 
+<% if @game.over? == false %>
 <form action='/play'>
 <input type="submit" value="NEXT TURN!">
+<% end %>
+
+<% if @game.over? == true %>
+<h2> <%= @game.current_turn.name %> took one too many and has no health! </h2>
+<form action='/gameover'>
+<input type="submit" value="GAME OVER!">
+<% end %>

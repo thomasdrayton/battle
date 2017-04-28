@@ -29,5 +29,9 @@ class Battle < Sinatra::Base
     erb(:attack)
   end
 
+  get '/gameover' do
+    erb(:gameover)
+  end
+
   run! if app_file == $0
 end
